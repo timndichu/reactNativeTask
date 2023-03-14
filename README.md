@@ -1,6 +1,9 @@
 # React Native Task
 This repository will contain a simple react native app task
 
+## Build
+This app was built in React Native + Expo
+
 ## Functionalities
 1. Login In >> With the help of [DummyJson free API](https://dummyjson.com/docs/auth)
 2. Log out
