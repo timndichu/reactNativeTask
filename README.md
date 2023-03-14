@@ -5,7 +5,7 @@ This repository will contain a simple react native app task
 This app was built in React Native + Expo
 
 ## Functionalities
-1. Login In >> With the help of [DummyJson free API](https://dummyjson.com/docs/auth)
+1. Logging In >> With the help of [DummyJson free API](https://dummyjson.com/docs/auth)
 2. Log out
 3. View user's details >> With the help of [DummyJson free API](https://dummyjson.com/docs/auth)
 4. View staff members
