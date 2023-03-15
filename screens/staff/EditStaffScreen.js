@@ -13,6 +13,7 @@ import useInput from "../../hooks/use-input";
 import PropTypes from "prop-types";
 import { deleteStaff, editStaff } from "../../store/staff/staff-reducer";
 import * as RootNavigation from "../../RootNavigation";
+import { sendEmail } from "../../utils/sendEmail";
 
 const EditStaffScreen = (props) => {
   const [isLoading, setLoading] = useState(false);
@@ -108,6 +109,9 @@ const EditStaffScreen = (props) => {
     console.log(staff);
     dispatch(editStaff({ staff: staff }));
     alert("Changes saved successfully!");
+    let subject = "Profile Notification #Edited";
+    let body = `Greeting ${staff.name}, we are glad to inform you that your staff profile has been updated.`;
+    sendEmail(staff.email, subject, body);
  
   };
 
@@ -120,6 +124,9 @@ const EditStaffScreen = (props) => {
           {
             text: "OK",
             onPress: () => {
+              let subject = "Profile Notification #Deleted";
+              let body = `Greeting ${staff.name}, we are sad to inform you that your staff profile has been deleted.`;
+              sendEmail(staff.email, subject, body);
                 console.log(defaultStaffNumber);
                 dispatch(deleteStaff({ staffNumber: defaultStaffNumber}));
               RootNavigation.replace("Staff");

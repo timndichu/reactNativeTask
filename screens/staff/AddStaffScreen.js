@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { ActivityIndicator, Button, HelperText, Text, TextInput } from "react-native-paper";
 import { useDispatch } from "react-redux";
 import useInput from "../../hooks/use-input";
 import { addStaff } from "../../store/staff/staff-reducer";
+import { sendEmail } from "../../utils/sendEmail";
 
 const AddStaffScreen = () => {
     const [isLoading, setLoading] = useState(false);
@@ -73,6 +74,9 @@ const AddStaffScreen = () => {
         salary: enteredSalary
     }
     console.log(staff);
+    let subject = "Profile Notification #Created";
+    let body = `Greeting ${staff.name}, we are glad to inform you that your staff profile has been created.`;
+    sendEmail(staff.email, subject, body);
     dispatch(addStaff({staff: staff}))
     alert("Staff Added Successfully!");
     clearDepartment();

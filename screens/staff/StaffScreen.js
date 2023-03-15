@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+
 import { StyleSheet, Text, View } from "react-native";
 import { DataTable, FAB } from "react-native-paper";
 import { useSelector } from "react-redux";
 
 import * as RootNavigation from "../../RootNavigation";
 
-const optionsPerPage = [2, 3, 4];
+// const optionsPerPage = [2, 3, 4];
 const StaffScreen = () => {
-  const [page, setPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(optionsPerPage[0]);
+  // const [page, setPage] = useState(0);
+  // const [itemsPerPage, setItemsPerPage] = useState(optionsPerPage[0]);
 
-  useEffect(() => {
-    setPage(0);
-  }, [itemsPerPage]);
+  // useEffect(() => {
+  //   setPage(0);
+  // }, [itemsPerPage]);
 
   const allStaff = useSelector((state) => state.staff.allStaff);
 
